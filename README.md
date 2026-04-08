@@ -40,4 +40,41 @@ cat <<EOF >> README.md
 Bu kodu işlətmək üçün aşağıdakı kitabxanaları Arduino IDE-də quraşdırmalısınız:
 * [mcp_can](https://github.com/coryjfowler/MCP_CAN_lib) - MCP2515 Modulu üçün.
 * SPI (Standart Kitabxana).
+EOFcat <<EOF > README.md
+# 🚗 Opel Astra H CAN-BUS Monitoring Project
+
+![Car](https://img.shields.io/badge/Car-Opel%20Astra%20H%202009-blue)
+![Engine](https://img.shields.io/badge/Engine-1.4%20Petrol-green)
+![Status](https://img.shields.io/badge/Status-Data%20Analysis-orange)
+
+## 📋 Proje Amacı
+Bu proje, **Opel Astra H** avtomobilinin CAN-BUS sistemini analiz etmək, su temperaturu, voltaj və motor dövriyyəsi kimi məlumatları ESP32 vasitəsilə oxumaq üçün yaradılıb.
+
+## 🌡️ Fokuslanmış Məlumatlar
+* **Coolant Temperature (Antifriz temperaturu):** Opel-lərdə adətən 0x108 və ya 0x4E8 ID-ləri içində olur.
+* **Battery Voltage (Batareya Voltajı):** Avtomobilin elektrik sisteminin vəziyyətini izləmək üçün.
+
+## 🔌 Bağlantı Şeması (Wiring)
+| MCP2515 Pin | ESP32 Pin | Tanım |
+| :--- | :--- | :--- |
+| **VCC** | 5V | Güç Beslemesi |
+| **GND** | GND | Toprak |
+| **CS** | GPIO 5 | Chip Select |
+| **SO (MISO)**| GPIO 19 | Data Out |
+| **SI (MOSI)**| GPIO 23 | Data In |
+| **SCK** | GPIO 18 | Clock |
+| **INT** | GPIO 4 | Interrupt |
+
+## ✅ Yol Haritası (Roadmap)
+- [x] GitHub Repozitoriyasının yaradılması
+- [x] ESP32 və MCP2515 bağlantısının qurulması
+- [x] Maşından xam dataların (Raw Data) tutulması
+- [ ] **Dataların analizi (Su temperaturu və Voltaj)** 🌡️⚡
+- [ ] RPM (Motor dövriyyəsi) tapılması
+- [ ] Sükan düymələrinin ID-lərinin müəyyən edilməsi
+- [ ] OLED ekran entegrasyonu
+- [ ] Bluetooth vasitəsilə telefona ötürülmə
+
+---
+**Kömək lazımdır:** Əgər Opel Astra H üçün Coolant Temp ID-ni bilirsinizsə, Issue açın!
 EOF
