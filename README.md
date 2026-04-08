@@ -34,3 +34,10 @@ EOF
 - [ ] Sükan düymələrinin ID-lərinin müəyyən edilməsi
 - [ ] ESP32 üzərində kiçik bir ekran (OLED) qurulması
 - [ ] Məlumatların mobil tətbiqə göndərilməsi (Bluetooth/Wi-Fi)
+cat <<EOF >> README.md
+
+## 📦 Lazım olan Kitabxanalar (Requirements)
+Bu kodu işlətmək üçün aşağıdakı kitabxanaları Arduino IDE-də quraşdırmalısınız:
+* [mcp_can](https://github.com/coryjfowler/MCP_CAN_lib) - MCP2515 Modulu üçün.
+* SPI (Standart Kitabxana).
+EOF
